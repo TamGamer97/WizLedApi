@@ -13,9 +13,9 @@ def index():
     return 'heloo 2'
 
 @app.route('/ChangeClr')
-def ChangeClr():
+async def ChangeClr():
     light = wizlight("192.168.1.41", port=38899)
-    light.turn_on(PilotBuilder(rgb = (255, 000, 000)))
+    await light.turn_on(PilotBuilder(rgb = (255, 000, 000)))
     print('Done')
     return 'Light Changed to red'
 
